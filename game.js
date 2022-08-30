@@ -32,6 +32,13 @@ function playRound(playerSelection, computerSelection) {
         else console.log("Scissors vs Scissors: It's a Tie");
     }
 }
+
+function game() {
+    for (let i = 0; i < 5; i++) {
+        const computerSelection = getComputerChoice();
+        playRound(playerSelection, computerSelection);
+    }
+}
 const playerSelection = "SCISSORS";
-const computerSelection = getComputerChoice();
-playRound(playerSelection, computerSelection);
+
+game();
