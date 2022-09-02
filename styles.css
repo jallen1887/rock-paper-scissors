@@ -1,0 +1,19 @@
+#header {
+    color: red;
+    text-align: center;
+}
+
+#button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#score-box {
+    text-align: center;
+}
+.game-button {
+    border: 3px solid black;
+    height: 150px;
+    width: 150px;
+}
