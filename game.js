@@ -60,28 +60,34 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let result = 0;
-    let humanScore = 0;
-    let computerScore = 0;
-    /*for (let i = 0; i < 5; i++) {
-        const computerSelection = getComputerChoice();
-        const playerSelection = prompt("Rock, Paper, or Scissors?");
-        
-        result = playRound(playerSelection, computerSelection);
-        if (result === 1) {
-            humanScore++;
-            console.log(`${humanScore} vs ${computerScore}`);
-        }
-        else if (result === -1) {
-            computerScore++;
-            console.log(`${humanScore} vs ${computerScore}`);
-        }
-        else {
-            i--;
-            console.log(`${humanScore} vs ${computerScore}`);
-        }
-    }*/
+function logTest() {
+    console.log("Clicked Here!");
 }
 
-game();
+function chooseRPS(e) {
+    const playerSelection = e.currentTarget.id;
+    const computerSelection = getComputerChoice();
+    let resultText = '';
+    console.log(playerSelection);
+    const result = playRound(playerSelection,computerSelection);
+
+    if (result === 0) {
+        resultText = "It's a Tie!"
+    }
+    else if (result === 1) {
+        resultText = "Human Wins!";
+        playerScore++;
+    }
+    else if (result === -1) {
+        resultText = "Computer Wins!";
+        computerScore++;
+    }
+
+    document.getElementById('score').innerHTML = 
+        `${resultText}: ${playerScore} vs ${computerScore}`;
+}
+
+let playerScore = 0;
+let computerScore = 0;
+const buttons = document.querySelectorAll('.game-button');
+buttons.forEach(button => button.addEventListener('click', chooseRPS));

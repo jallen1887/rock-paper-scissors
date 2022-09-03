@@ -1,5 +1,10 @@
+body {
+    background-color: azure;
+}
+
 #header {
     color: red;
+    background-color: burlywood;
     text-align: center;
 }
 
@@ -14,6 +19,7 @@
 }
 .game-button {
     border: 3px solid black;
+    border-radius: 3px;
     height: 150px;
     width: 150px;
 }
