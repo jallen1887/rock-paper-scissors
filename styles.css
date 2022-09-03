@@ -24,8 +24,11 @@ body {
     width: 150px;
     text-align: center;
     line-height: 118px;
+    user-select: none;
 }
 
 .reset {
     margin: 20px;
+    height: 50px;
+    width: 75px;
 }
