@@ -83,8 +83,37 @@ function chooseRPS(e) {
         computerScore++;
     }
 
-    document.getElementById('score').innerHTML = 
+    document.getElementById('score').textContent = 
         `${resultText}: ${playerScore} vs ${computerScore}`;
+
+    if (playerScore >= 3 || computerScore >= 3) {
+        pauseGame();
+    }
+}
+
+function pauseGame() {
+    buttons.forEach(button => button.removeEventListener('click', chooseRPS));
+    const scoreBox = document.querySelector("div#score-box");
+    const resetButton = document.createElement('button');
+    resetButton.classList.add('reset');
+    resetButton.textContent = 'Reset!';
+    scoreBox.appendChild(resetButton);
+    resetButton.addEventListener('click', resetGame);
+}
+
+function resetGame(e) {
+    console.log(e.target.className);
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById('score').textContent = 
+        `${playerScore} vs ${computerScore}`;
+    
+    const scoreBox = document.querySelector("div#score-box");
+    const resetButton = document.querySelector('button.reset');
+    scoreBox.removeChild(resetButton);
+
+    const buttons = document.querySelectorAll('.game-button');
+    buttons.forEach(button => button.addEventListener('click', chooseRPS));
 }
 
 let playerScore = 0;
