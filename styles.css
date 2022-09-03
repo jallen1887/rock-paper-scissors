@@ -1,34 +1,66 @@
+:root {
+    --lightgrey: #d6d4d4;
+    --green: #407c72;
+    --darkgreen: #2f4f4f;
+    --darkergreen: #1c3535;
+}
+
 body {
-    background-color: azure;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--darkgreen);
+    margin: 0px;
 }
 
 #header {
-    color: red;
-    background-color: burlywood;
+    color: var(--lightgrey);
+    text-shadow: 2px 2px 1px black;
     text-align: center;
+    padding: 40px 0px;
+}
+
+#score-box {
+    background-color: var(--green);
+    color: var(--lightgrey);
+    text-shadow: 2px 2px 3px black;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px 0px;
 }
 
 #button-container {
+    background-color: var(--green);
+    padding: 10px 0px;
     display: flex;
     justify-content: center;
     gap: 10px;
 }
 
-#score-box {
-    text-align: center;
-}
 .game-button {
+    font-size: 80px;
+    background-color: var(--darkergreen);
     border: 3px solid black;
     border-radius: 3px;
     height: 150px;
     width: 150px;
     text-align: center;
-    line-height: 118px;
     user-select: none;
 }
 
+.button-text {
+    margin: 28px 0px;
+}
+
+.game-button:hover {
+    background-color: rgb(44, 44, 44);
+    cursor: pointer;
+}
+
 .reset {
+    font-size: 20px;
+    color: var(--lightgrey);
+    text-shadow: 2px 2px 3px black;
+    background-color: var(--darkergreen);
     margin: 20px;
     height: 50px;
-    width: 75px;
+    width: 100px;
 }
