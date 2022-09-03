@@ -22,4 +22,6 @@ body {
     border-radius: 3px;
     height: 150px;
     width: 150px;
+    text-align: center;
+    line-height: 118px;
 }
