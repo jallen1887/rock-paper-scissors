@@ -77,8 +77,10 @@ function chooseRPS(e) {
         computerScore++;
     }
 
+    document.getElementById('result-text').textContent = 
+        `${resultText}`;
     document.getElementById('score').textContent = 
-        `${resultText} ${playerScore} vs ${computerScore}`;
+        `${playerScore} vs ${computerScore}`;
 
     if (playerScore >= 3 || computerScore >= 3) {
         addVictoryText();
@@ -115,9 +117,12 @@ function pauseGame() {
 }
 
 function resetGame(e) {
-    console.log(e.target.className);
+    
     playerScore = 0;
     computerScore = 0;
+
+    document.getElementById('result-text').textContent = 
+        ``;
     document.getElementById('score').textContent = 
         `${playerScore} vs ${computerScore}`;
     
