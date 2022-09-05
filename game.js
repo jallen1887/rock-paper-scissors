@@ -82,7 +82,7 @@ function chooseRPS(e) {
     document.getElementById('score').textContent = 
         `${playerScore} vs ${computerScore}`;
 
-    if (playerScore >= 3 || computerScore >= 3) {
+    if (playerScore >= 5 || computerScore >= 5) {
         addVictoryText();
         pauseGame();
     }
@@ -93,7 +93,7 @@ function addVictoryText() {
     const scoreBox = document.querySelector("div#score-box");
     victoryText.classList.add('victory-text');
 
-    if (playerScore >= 3) {
+    if (playerScore >= 5) {
         victoryText.textContent = `Ultimate Victory!`;
     }
     else {
@@ -117,7 +117,7 @@ function pauseGame() {
 }
 
 function resetGame(e) {
-    
+
     playerScore = 0;
     computerScore = 0;
 
